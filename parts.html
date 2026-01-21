@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genuine auto parts for all makes and models with warranty">
+    <meta name="keywords" content="auto parts, car parts, engine parts, brake parts, suspension parts">
+    <title>Auto Parts Store | Danfopii Ventures</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/danfopii.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <i class="logo-image"></i>
+                    
+                    <span>DANFOPII</span>VENTURES
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="parts.html" class="nav-link active">Auto Parts</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+   
+
+    <!-- Parts Categories -->
+    <section class="parts-categories-section">
+        <div class="container">
+            <h2>Browse by Category</h2>
+            <div class="categories-grid">
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Engine Parts</h3>
+                    <p>Filters, belts, pumps, gaskets</p>
+                </a>
+                
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <h3>Brake System</h3>
+                    <p>Pads, rotors, calipers, lines</p>
+                </a>
+                
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Suspension</h3>
+                    <p>Shocks, struts, control arms</p>
+                </a>
+                
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical</h3>
+                    <p>Batteries, alternators, starters</p>
+                </a>
+                
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Body Parts</h3>
+                    <p>Mirrors, lights, bumpers</p>
+                </a>
+                
+                <a href="#parts-container" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3>Interior</h3>
+                    <p>Seats, dashboards, carpets</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Parts -->
+    <section class="featured-parts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Parts</h2>
+            </div>
+            
+            <div class="parts-grid" id="parts-container">
+                <!-- Parts loaded dynamically from JSON -->
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/brakepads2.png" alt="Brake Pads">
+                        <span class="part-badge">Best Seller</span>
+                    </div>
+                    <div class="part-info">
+                        <h3>Premium Ceramic Brake Pads</h3>
+                        <p class="part-description">Low dust, low noise ceramic brake pads for smooth braking</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                       
+                        <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/filterFinal.png" alt="Air Filter">
+                    </div>
+                    <div class="part-info">
+                        <h3>High-Flow Air Filter</h3>
+                        <p class="part-description">Performance air filter for improved engine airflow</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/batteries.png" alt="Batteries">
+                    </div>
+                    <div class="part-info">
+                        <h3>Quality Batteries</h3>
+                        <p class="part-description">Provides reliable power for starting and running your vehicle electronics</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+               <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/alternator.png" alt="Alternators">
+                    </div>
+                    <div class="part-info">
+                        <h3>Premium Quality Alternators</h3>
+                        <p class="part-description">Keeps the car running electrically and recharges the battery while you drive</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/bumbers.png" alt="Bumbers">
+                    </div>
+                    <div class="part-info">
+                        <h3>Quality Bumbers</h3>
+                        <p class="part-description">Protects the car, its occupants, and pedestrians by absorbing impact and minimizing damage</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/gasket.png" alt="Gasket">
+                    </div>
+                    <div class="part-info">
+                        <h3>Gaskets - High-Quality</h3>
+                        <p class="part-description">Seal engine and system components, keeping fluids in their proper paths and ensuring efficient, safe engine operation</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/shockabsorbers.png" alt="Shock Absorbers">
+                    </div>
+                    <div class="part-info">
+                        <h3>Shock Absorbers - High-Quality</h3>
+                        <p class="part-description">Provide smooth ride and control vehicle body movement</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                        
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+               
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="assets/images/oilfilter.png" alt="Oil Filter">
+                    </div>
+                    <div class="part-info">
+                        <h3>Premium Oil Filter</h3>
+                        <p class="part-description">High-efficiency oil filter with synthetic media</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                         <div class="part-actions">
+                            <a href="contact.html" >
+                            <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <div class="part-image">
+                        <img src="/assets/images/sparkplugs.png" alt="Spark Plugs">
+                    </div>
+                    <div class="part-info">
+                        <h3>Iridium Spark Plugs (Set of 4)</h3>
+                        <p class="part-description">Long-life iridium spark plugs for better ignition</p>
+                        <div class="part-compatibility">
+                            <p><i class="fas fa-car"></i> Available for All Types of Vehicles</p>
+                        </div>
+                        <div class="part-details">
+                            <span class="part-availability available">In Stock</span>
+                        </div>
+                            <div class="part-actions">
+                                <a href="contact.html" >
+                                <button class="btn btn-secondary btn-inquire"> Make Enquiries about Item</button>
+                                </a>
+                            </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts by Vehicle -->
+    <section class="parts-by-vehicle">
+        <div class="container">
+            <h2>Find Parts for Your Vehicle</h2>
+            <div class="vehicle-selector">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vehicle-year">Year</label>
+                        <select id="vehicle-year" class="form-select">
+                            <option value="">Select Year</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2015">2014</option>                            
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2000-2009">2000-2009</option>
+
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle-make">Make</label>
+                        <select id="vehicle-make" class="form-select">
+                            <option value="">Select Make</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="ford">Ford</option>
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes">Mercedes-Benz</option>
+                            <option value="nissan">Nissan</option>
+                            <option value="hyundai">Hyundai</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle-model">Model</label>
+                        <select id="vehicle-model" class="form-select">
+                            <option value="">Select Model</option>
+                            <!-- Options populated based on make -->
+                        </select>
+                    </div>
+                    
+                    <button id="find-parts-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Find Parts
+                    </button>
+                </div>
+            </div>
+            
+            <div class="vehicle-results" id="vehicle-results" style="display: none;">
+                <h3>Available Parts for <span id="selected-vehicle"></span></h3>
+                <div class="results-grid">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Brands -->
+    <section class="parts-brands">
+        <div class="container">
+            <h2>Trusted Brands We Carry</h2>
+            <div class="brands-grid">
+                <div class="brand-logo">
+                    <img src="/assets/brands/bosch.jpg" alt="Bosch">
+                    <span>Bosch</span>
+                </div>
+                <div class="brand-logo">
+                    <img src="/assets/brands/denso.png" alt="Denso">
+                    <span>Denso</span>
+                </div>
+                <div class="brand-logo">
+                    <img src="/assets/brands/mobil3.png" alt="Mobil 1">
+                    <span>Mobil 1</span>
+                </div>
+                <div class="brand-logo">
+                    <img src="/assets/brands/michelin.jpg" alt="Michelin">
+                    <span>Michelin</span>
+                </div>
+                <div class="brand-logo">
+                    <img src="/assets/brands/ngk.png" alt="NGK">
+                    <span>NGK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Services -->
+    <section class="parts-services">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Parts Installation</h3>
+                    <p>Professional installation by certified technicians</p>
+                    <a href="c.html" class="service-link">Book Installation →</a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Same-Day Delivery</h3>
+                    <p>Local delivery available for urgent parts needs</p>
+                    <a href="contact.html" class="service-link">Request Delivery →</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/233244964880" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+               <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <i class="logo-image"></i>
+                        <span>DANFOPII</span>VENTURES
+                    </a>
+                    <p class="footer-description">
+                        Premium automotive solutions. Your trusted partner for cars spare parts, and service.
+                    </p>
+                    
+                </div>
+                
+                
+                
+                <div class="footer-section">
+                    <h3>Parts Categories</h3>
+                    <ul>
+                        <li><a href="#engine">Engine Parts</a></li>
+                        <li><a href="#brakes">Brake System</a></li>
+                        <li><a href="#suspension">Suspension</a></li>
+                        <li><a href="#electrical">Electrical Parts</a></li>
+                        <li><a href="#body">Body Parts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Okaikor Street, Accra, Ghana</p>
+                        <p><i class="fas fa-phone"></i> +233 (0) 24 496-4880</p>                        
+                        <p><i class="fas fa-envelope"></i> danielappiahofori10@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-8PM, Sun: 10AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> DANFOPII VENTURES. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/inventory.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Vehicle model options based on make
+            const vehicleModels = {
+                toyota: ['Camry', 'Corolla', 'RAV4', 'Highlander', 'Tacoma', '4Runner'],
+                honda: ['Civic', 'Accord', 'CR-V', 'Pilot', 'Odyssey'],
+                ford: ['F-150', 'Explorer', 'Escape', 'Mustang', 'Focus'],
+                chevrolet: ['Silverado', 'Equinox', 'Malibu', 'Tahoe', 'Camaro'],
+                bmw: ['3 Series', '5 Series', 'X3', 'X5', 'X7'],
+                mercedes: ['C-Class', 'E-Class', 'GLC', 'GLE', 'S-Class'],
+                nissan: ['Altima', 'Sentra', 'Rogue', 'Pathfinder', 'Frontier'],
+                hyundai: ['Elantra', 'Sonata', 'Tucson', 'Santa Fe', 'Kona']
+            };
+            
+            // Populate model options based on selected make
+            document.getElementById('vehicle-make').addEventListener('change', function() {
+                const make = this.value;
+                const modelSelect = document.getElementById('vehicle-model');
+                modelSelect.innerHTML = '<option value="">Select Model</option>';
+                
+                if (make && vehicleModels[make]) {
+                    vehicleModels[make].forEach(model => {
+                        const option = document.createElement('option');
+                        option.value = model.toLowerCase();
+                        option.textContent = model;
+                        modelSelect.appendChild(option);
+                    });
+                }
+            });
+            
+            // Find parts button
+            document.getElementById('find-parts-btn').addEventListener('click', function() {
+                const year = document.getElementById('vehicle-year').value;
+                const make = document.getElementById('vehicle-make').value;
+                const model = document.getElementById('vehicle-model').value;
+                
+                if (!year || !make || !model) {
+                    AutoElite.showNotification('Please select year, make, and model', 'error');
+                    return;
+                }
+                
+                const vehicleName = `${year} ${make.charAt(0).toUpperCase() + make.slice(1)} ${model.charAt(0).toUpperCase() + model.slice(1)}`;
+                document.getElementById('selected-vehicle').textContent = vehicleName;
+                
+                // Show results section
+                const resultsSection = document.getElementById('vehicle-results');
+                resultsSection.style.display = 'block';
+                
+                // Scroll to results
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Simulate loading parts for vehicle
+                const resultsGrid = document.querySelector('.results-grid');
+                resultsGrid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><p>Finding parts for your vehicle...</p></div>';
+                
+                setTimeout(() => {
+                    resultsGrid.innerHTML = `
+                        <div class="part-result">
+                            <h4>Oil Filter</h4>
+                            <p>Premium oil filter for ${vehicleName}</p>
+                            <span class="part-price">$12.99</span>
+                            <button class="btn btn-sm btn-primary">Order</button>
+                        </div>
+                        <div class="part-result">
+                            <h4>Air Filter</h4>
+                            <p>High-flow air filter for ${vehicleName}</p>
+                            <span class="part-price">$24.99</span>
+                            <button class="btn btn-sm btn-primary">Order</button>
+                        </div>
+                        <div class="part-result">
+                            <h4>Brake Pads (Front)</h4>
+                            <p>Ceramic brake pads for ${vehicleName}</p>
+                            <span class="part-price">$89.99</span>
+                            <button class="btn btn-sm btn-primary">Order</button>
+                        </div>
+                        <div class="part-result">
+                            <h4>Spark Plugs (Set of 4)</h4>
+                            <p>Iridium spark plugs for ${vehicleName}</p>
+                            <span class="part-price">$45.99</span>
+                            <button class="btn btn-sm btn-primary">Order</button>
+                        </div>
+                    `;
+                    
+                    // Add event listeners to order buttons
+                    document.querySelectorAll('.part-result .btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const partName = this.closest('.part-result').querySelector('h4').textContent;
+                            const partPrice = this.closest('.part-result').querySelector('.part-price').textContent;
+                            openOrderModal(partName, partPrice, vehicleName);
+                        });
+                    });
+                }, 1500);
+            });
+            
+            // Parts search
+            document.getElementById('parts-search').addEventListener('input', AutoElite.debounce(function() {
+                const searchTerm = this.value.toLowerCase();
+                const partCards = document.querySelectorAll('.part-card');
+                
+                partCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('.part-description').textContent.toLowerCase();
+                    const compatibility = card.querySelector('.part-compatibility p').textContent.toLowerCase();
+                    
+                    if (searchTerm === '' || title.includes(searchTerm) || description.includes(searchTerm) || compatibility.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }, 300));
+            
+            // Category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.querySelector('h3').textContent;
+                    document.getElementById('parts-search').value = category;
+                    document.getElementById('parts-search').dispatchEvent(new Event('input'));
+                    
+                    // Scroll to parts section
+                    document.querySelector('.featured-parts').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Order buttons
+            document.querySelectorAll('.btn-order').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const partCard = this.closest('.part-card');
+                    const partName = partCard.querySelector('h3').textContent;
+                    const partPrice = partCard.querySelector('.part-price').textContent;
+                    openOrderModal(partName, partPrice);
+                });
+            });
+            
+            // WhatsApp inquiry buttons
+            document.querySelectorAll('.btn-inquire').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const partCard = this.closest('.part-card');
+                    const partName = partCard.querySelector('h3').textContent;
+                    const partPrice = partCard.querySelector('.part-price').textContent;
+                    
+                    const message = `Hello, I'm interested in ${partName} (${partPrice}). Can you provide more information?`;
+                    const phone = '233244964880';
+                    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+                });
+            });
+            
+            // Parts lookup button
+            document.getElementById('parts-lookup').addEventListener('click', function() {
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <h3>Parts Lookup Request</h3>
+                        <p>Can't find what you need? Our parts specialists can locate it for you.</p>
+                        <form id="lookup-form">
+                            <div class="form-group">
+                                <label for="lookup-part">Part Name/Number</label>
+                                <input type="text" id="lookup-part" required placeholder="e.g., Alternator for Honda Civic 2018">
+                            </div>
+                            <div class="form-group">
+                                <label for="lookup-vehicle">Vehicle Details</label>
+                                <input type="text" id="lookup-vehicle" placeholder="Year, Make, Model (optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="lookup-contact">Contact Phone</label>
+                                <input type="tel" id="lookup-contact" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                        </form>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Style modal
+                Object.assign(modal.style, {
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: '10000',
+                    animation: 'fadeIn 0.3s ease'
+                });
+                
+                const modalContent = modal.querySelector('.modal-content');
+                Object.assign(modalContent.style, {
+                    backgroundColor: 'white',
+                    padding: '2rem',
+                    borderRadius: 'var(--border-radius)',
+                    maxWidth: '500px',
+                    width: '90%',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    position: 'relative'
+                });
+                
+                // Close modal
+                modal.querySelector('.modal-close').addEventListener('click', () => {
+                    modal.style.animation = 'fadeIn 0.3s ease reverse';
+                    setTimeout(() => document.body.removeChild(modal), 300);
+                });
+                
+                // Close on outside click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.animation = 'fadeIn 0.3s ease reverse';
+                        setTimeout(() => document.body.removeChild(modal), 300);
+                    }
+                });
+                
+                // Handle form submission
+                modal.querySelector('#lookup-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        part: document.getElementById('lookup-part').value,
+                        vehicle: document.getElementById('lookup-vehicle').value,
+                        contact: document.getElementById('lookup-contact').value
+                    };
+                    
+                    // Send via WhatsApp
+                    const whatsappMessage = `Parts Lookup Request:\n\nPart: ${formData.part}\nVehicle: ${formData.vehicle}\nContact: ${formData.contact}`;
+                    const whatsappUrl = `https://wa.me/233244964880?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Show success message
+                    AutoElite.showNotification('Lookup request sent! We\'ll contact you within 24 hours.', 'success');
+                    
+                    // Close modal
+                    modal.style.animation = 'fadeIn 0.3s ease reverse';
+                    setTimeout(() => document.body.removeChild(modal), 300);
+                });
+            });
+            
+            function openOrderModal(partName, partPrice, vehicle = '') {
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <span class="modal-close">&times;</span>
+                        <h3>Order ${partName}</h3>
+                        <p class="part-price-large">${partPrice}</p>
+                        <form id="order-form">
+                            <div class="form-group">
+                                <label for="order-name">Full Name</label>
+                                <input type="text" id="order-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="order-phone">Phone Number</label>
+                                <input type="tel" id="order-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="order-address">Delivery Address (Optional)</label>
+                                <textarea id="order-address" placeholder="For delivery service"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="order-quantity">Quantity</label>
+                                <select id="order-quantity" class="form-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="order-installation">
+                                    Include Installation Service (+$50)
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+                        </form>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Style modal
+                Object.assign(modal.style, {
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: '10000',
+                    animation: 'fadeIn 0.3s ease'
+                });
+                
+                const modalContent = modal.querySelector('.modal-content');
+                Object.assign(modalContent.style, {
+                    backgroundColor: 'white',
+                    padding: '2rem',
+                    borderRadius: 'var(--border-radius)',
+                    maxWidth: '500px',
+                    width: '90%',
+                    maxHeight: '90vh',
+                    overflowY: 'auto',
+                    position: 'relative'
+                });
+                
+                // Close modal
+                modal.querySelector('.modal-close').addEventListener('click', () => {
+                    modal.style.animation = 'fadeIn 0.3s ease reverse';
+                    setTimeout(() => document.body.removeChild(modal), 300);
+                });
+                
+                // Close on outside click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.animation = 'fadeIn 0.3s ease reverse';
+                        setTimeout(() => document.body.removeChild(modal), 300);
+                    }
+                });
+                
+                // Handle form submission
+                modal.querySelector('#order-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        name: document.getElementById('order-name').value,
+                        phone: document.getElementById('order-phone').value,
+                        address: document.getElementById('order-address').value,
+                        part: partName,
+                        price: partPrice,
+                        quantity: document.getElementById('order-quantity').value,
+                        installation: document.getElementById('order-installation').checked,
+                        vehicle: vehicle
+                    };
+                    
+                    // Send via WhatsApp
+                    const whatsappMessage = `Parts Order:\n\nPart: ${formData.part}\nPrice: ${formData.price}\nQuantity: ${formData.quantity}\nInstallation: ${formData.installation ? 'Yes' : 'No'}\nVehicle: ${formData.vehicle}\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}`;
+                    const whatsappUrl = `https://wa.me/233244964880?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Show success message
+                    AutoElite.showNotification('Order placed successfully! We\'ll contact you shortly.', 'success');
+                    
+                    // Close modal
+                    modal.style.animation = 'fadeIn 0.3s ease reverse';
+                    setTimeout(() => document.body.removeChild(modal), 300);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

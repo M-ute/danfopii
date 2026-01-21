@@ -1,0 +1,261 @@
+{
+  "cars": [
+    {
+      "id": "CAR001",
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2023,
+      "condition": "New",
+      "price": 28500,
+      "mileage": 0,
+      "transmission": "Automatic",
+      "fuelType": "Hybrid",
+      "engine": "2.5L 4-cylinder",
+      "color": "Silver",
+      "interiorColor": "Black",
+      "description": "Brand new Toyota Camry Hybrid with advanced safety features, leather interior, and premium sound system.",
+      "images": [
+        "assets/images/cars/camry-1.jpg",
+        "assets/images/cars/camry-2.jpg",
+        "assets/images/cars/camry-3.jpg"
+      ],
+      "features": [
+        "Leather Seats",
+        "Sunroof",
+        "Navigation System",
+        "Bluetooth",
+        "Backup Camera",
+        "Blind Spot Monitoring"
+      ],
+      "category": "sedan",
+      "imported": false,
+      "available": true,
+      "featured": true,
+      "contactPhone": "+12345678901",
+      "location": "Main Showroom"
+    },
+    {
+      "id": "CAR002",
+      "make": "Ford",
+      "model": "F-150",
+      "year": 2021,
+      "condition": "Used",
+      "price": 38500,
+      "mileage": 24500,
+      "transmission": "Automatic",
+      "fuelType": "Gasoline",
+      "engine": "3.5L V6 EcoBoost",
+      "color": "Blue",
+      "interiorColor": "Gray",
+      "description": "Well-maintained Ford F-150 with one owner, no accidents, and all service records available.",
+      "images": [
+        "assets/images/cars/f150-1.jpg",
+        "assets/images/cars/f150-2.jpg",
+        "assets/images/cars/f150-3.jpg"
+      ],
+      "features": [
+        "4WD",
+        "Towing Package",
+        "Leather Interior",
+        "Navigation",
+        "Heated Seats",
+        "Bed Liner"
+      ],
+      "category": "truck",
+      "imported": false,
+      "available": true,
+      "featured": true,
+      "contactPhone": "+12345678901",
+      "location": "Main Showroom"
+    },
+    {
+      "id": "CAR003",
+      "make": "BMW",
+      "model": "X5",
+      "year": 2022,
+      "condition": "Used",
+      "price": 62500,
+      "mileage": 12000,
+      "transmission": "Automatic",
+      "fuelType": "Gasoline",
+      "engine": "3.0L I6 Turbo",
+      "color": "Black",
+      "interiorColor": "Cream",
+      "description": "Luxury SUV with premium package, executive package, and driver assistance package.",
+      "images": [
+        "assets/images/cars/x5-1.jpg",
+        "assets/images/cars/x5-2.jpg",
+        "assets/images/cars/x5-3.jpg"
+      ],
+      "features": [
+        "Panoramic Sunroof",
+        "Heated/Cooled Seats",
+        "Premium Sound",
+        "Heads-up Display",
+        "Parking Assistant",
+        "Wireless Charging"
+      ],
+      "category": "suv",
+      "imported": true,
+      "available": true,
+      "featured": true,
+      "contactPhone": "+12345678901",
+      "location": "Import Center"
+    },
+    {
+      "id": "CAR004",
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2024,
+      "condition": "New",
+      "price": 24500,
+      "mileage": 0,
+      "transmission": "Manual",
+      "fuelType": "Gasoline",
+      "engine": "2.0L 4-cylinder",
+      "color": "Red",
+      "interiorColor": "Black",
+      "description": "New Honda Civic with sport package, manual transmission for driving enthusiasts.",
+      "images": [
+        "assets/images/cars/civic-1.jpg",
+        "assets/images/cars/civic-2.jpg",
+        "assets/images/cars/civic-3.jpg"
+      ],
+      "features": [
+        "Sport Package",
+        "Apple CarPlay",
+        "Android Auto",
+        "Lane Keeping Assist",
+        "Adaptive Cruise Control"
+      ],
+      "category": "sedan",
+      "imported": false,
+      "available": true,
+      "featured": false,
+      "contactPhone": "+12345678901",
+      "location": "Main Showroom"
+    },
+    {
+      "id": "CAR005",
+      "make": "Mercedes-Benz",
+      "model": "E-Class",
+      "year": 2020,
+      "condition": "Used",
+      "price": 48500,
+      "mileage": 32000,
+      "transmission": "Automatic",
+      "fuelType": "Diesel",
+      "engine": "2.0L I4 Turbo Diesel",
+      "color": "White",
+      "interiorColor": "Brown",
+      "description": "Executive sedan with AMG line package, excellent fuel economy, and luxury features.",
+      "images": [
+        "assets/images/cars/eclass-1.jpg",
+        "assets/images/cars/eclass-2.jpg",
+        "assets/images/cars/eclass-3.jpg"
+      ],
+      "features": [
+        "AMG Package",
+        "Air Suspension",
+        "Burmester Sound",
+        "Massage Seats",
+        "Night Vision"
+      ],
+      "category": "sedan",
+      "imported": true,
+      "available": true,
+      "featured": true,
+      "contactPhone": "+12345678901",
+      "location": "Import Center"
+    },
+    {
+      "id": "CAR006",
+      "make": "Tesla",
+      "model": "Model Y",
+      "year": 2023,
+      "condition": "New",
+      "price": 54900,
+      "mileage": 0,
+      "transmission": "Automatic",
+      "fuelType": "Electric",
+      "engine": "Dual Motor",
+      "color": "Gray",
+      "interiorColor": "White",
+      "description": "Fully electric SUV with long range, autopilot, and premium interior.",
+      "images": [
+        "assets/images/cars/tesla-1.jpg",
+        "assets/images/cars/tesla-2.jpg",
+        "assets/images/cars/tesla-3.jpg"
+      ],
+      "features": [
+        "Autopilot",
+        "Glass Roof",
+        "Premium Audio",
+        "Wireless Gaming",
+        "Dog Mode"
+      ],
+      "category": "suv",
+      "imported": false,
+      "available": true,
+      "featured": true,
+      "contactPhone": "+12345678901",
+      "location": "Main Showroom"
+    }
+  ],
+  "rentals": [
+    {
+      "id": "RENT001",
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2023,
+      "dailyRate": 45,
+      "weeklyRate": 280,
+      "monthlyRate": 950,
+      "seats": 5,
+      "transmission": "Automatic",
+      "fuelType": "Gasoline",
+      "fuelPolicy": "Full to Full",
+      "available": true,
+      "images": ["assets/images/rentals/corolla.jpg"]
+    },
+    {
+      "id": "RENT002",
+      "make": "Chevrolet",
+      "model": "Suburban",
+      "year": 2022,
+      "dailyRate": 120,
+      "weeklyRate": 750,
+      "monthlyRate": 2500,
+      "seats": 8,
+      "transmission": "Automatic",
+      "fuelType": "Gasoline",
+      "fuelPolicy": "Full to Full",
+      "available": true,
+      "images": ["assets/images/rentals/suburban.jpg"]
+    }
+  ],
+  "parts": [
+    {
+      "id": "PART001",
+      "name": "Brake Pad Set",
+      "category": "Brake System",
+      "compatible": ["Toyota Camry 2018-2023", "Toyota Avalon 2019-2023"],
+      "description": "Premium ceramic brake pads with low dust and noise reduction.",
+      "price": 89.99,
+      "availability": "In Stock",
+      "warranty": "2 Years",
+      "images": ["assets/images/parts/brakepad.jpg"]
+    },
+    {
+      "id": "PART002",
+      "name": "Engine Air Filter",
+      "category": "Engine Parts",
+      "compatible": ["Honda Civic 2016-2021", "Honda Accord 2018-2022"],
+      "description": "High-flow air filter for improved engine performance.",
+      "price": 24.99,
+      "availability": "In Stock",
+      "warranty": "1 Year",
+      "images": ["assets/images/parts/airfilter.jpg"]
+    }
+  ]
+}
