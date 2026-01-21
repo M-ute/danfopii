@@ -428,7 +428,7 @@
                     </div>
                     <h3>Parts Installation</h3>
                     <p>Professional installation by certified technicians</p>
-                    <a href="c.html" class="service-link">Book Installation →</a>
+                    <a href="contact.html" class="service-link">Book Installation →</a>
                 </div>
                 
                 <div class="service-card">
@@ -505,7 +505,7 @@
             
             // Vehicle model options based on make
             const vehicleModels = {
-                toyota: ['Camry', 'Corolla', 'RAV4', 'Highlander', 'Tacoma', '4Runner'],
+                toyota: ['Camry', 'Corolla', 'RAV4', 'Highlander', 'Tacoma', '4Runner', 'Vitz', 'Yaris'],
                 honda: ['Civic', 'Accord', 'CR-V', 'Pilot', 'Odyssey'],
                 ford: ['F-150', 'Explorer', 'Escape', 'Mustang', 'Focus'],
                 chevrolet: ['Silverado', 'Equinox', 'Malibu', 'Tahoe', 'Camaro'],
@@ -561,26 +561,28 @@
                         <div class="part-result">
                             <h4>Oil Filter</h4>
                             <p>Premium oil filter for ${vehicleName}</p>
-                            <span class="part-price">$12.99</span>
                             <button class="btn btn-sm btn-primary">Order</button>
                         </div>
                         <div class="part-result">
                             <h4>Air Filter</h4>
                             <p>High-flow air filter for ${vehicleName}</p>
-                            <span class="part-price">$24.99</span>
                             <button class="btn btn-sm btn-primary">Order</button>
                         </div>
                         <div class="part-result">
                             <h4>Brake Pads (Front)</h4>
                             <p>Ceramic brake pads for ${vehicleName}</p>
-                            <span class="part-price">$89.99</span>
                             <button class="btn btn-sm btn-primary">Order</button>
                         </div>
                         <div class="part-result">
                             <h4>Spark Plugs (Set of 4)</h4>
                             <p>Iridium spark plugs for ${vehicleName}</p>
-                            <span class="part-price">$45.99</span>
                             <button class="btn btn-sm btn-primary">Order</button>
+                        </div>
+                        <div class="part-result">
+                            <h4>Part Not Listed </h4>
+                            <p> </p>
+                             <p>  </p>
+                            <button class="btn btn-sm btn-primary">Whatsapp</button>
                         </div>
                     `;
                     
@@ -588,8 +590,7 @@
                     document.querySelectorAll('.part-result .btn').forEach(btn => {
                         btn.addEventListener('click', function() {
                             const partName = this.closest('.part-result').querySelector('h4').textContent;
-                            const partPrice = this.closest('.part-result').querySelector('.part-price').textContent;
-                            openOrderModal(partName, partPrice, vehicleName);
+                            openOrderModal(partName,vehicleName);
                         });
                     });
                 }, 1500);
@@ -655,7 +656,7 @@
                 const modal = document.createElement('div');
                 modal.className = 'modal';
                 modal.innerHTML = `
-                    <div class="modal-content">
+                   href="https://wa.me/233244964880 <div class="modal-content">
                         <span class="modal-close">&times;</span>
                         <h3>Parts Lookup Request</h3>
                         <p>Can't find what you need? Our parts specialists can locate it for you.</p>
@@ -745,120 +746,133 @@
                 });
             });
             
-            function openOrderModal(partName, partPrice, vehicle = '') {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="modal-content">
-                        <span class="modal-close">&times;</span>
-                        <h3>Order ${partName}</h3>
-                        <p class="part-price-large">${partPrice}</p>
-                        <form id="order-form">
-                            <div class="form-group">
-                                <label for="order-name">Full Name</label>
-                                <input type="text" id="order-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="order-phone">Phone Number</label>
-                                <input type="tel" id="order-phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="order-address">Delivery Address (Optional)</label>
-                                <textarea id="order-address" placeholder="For delivery service"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="order-quantity">Quantity</label>
-                                <select id="order-quantity" class="form-select">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" id="order-installation">
-                                    Include Installation Service (+$50)
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Place Order</button>
-                        </form>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                
-                // Style modal
-                Object.assign(modal.style, {
-                    position: 'fixed',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(0,0,0,0.5)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: '10000',
-                    animation: 'fadeIn 0.3s ease'
-                });
-                
-                const modalContent = modal.querySelector('.modal-content');
-                Object.assign(modalContent.style, {
-                    backgroundColor: 'white',
-                    padding: '2rem',
-                    borderRadius: 'var(--border-radius)',
-                    maxWidth: '500px',
-                    width: '90%',
-                    maxHeight: '90vh',
-                    overflowY: 'auto',
-                    position: 'relative'
-                });
-                
-                // Close modal
-                modal.querySelector('.modal-close').addEventListener('click', () => {
-                    modal.style.animation = 'fadeIn 0.3s ease reverse';
-                    setTimeout(() => document.body.removeChild(modal), 300);
-                });
-                
-                // Close on outside click
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.style.animation = 'fadeIn 0.3s ease reverse';
-                        setTimeout(() => document.body.removeChild(modal), 300);
-                    }
-                });
-                
-                // Handle form submission
-                modal.querySelector('#order-form').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = {
-                        name: document.getElementById('order-name').value,
-                        phone: document.getElementById('order-phone').value,
-                        address: document.getElementById('order-address').value,
-                        part: partName,
-                        price: partPrice,
-                        quantity: document.getElementById('order-quantity').value,
-                        installation: document.getElementById('order-installation').checked,
-                        vehicle: vehicle
-                    };
-                    
-                    // Send via WhatsApp
-                    const whatsappMessage = `Parts Order:\n\nPart: ${formData.part}\nPrice: ${formData.price}\nQuantity: ${formData.quantity}\nInstallation: ${formData.installation ? 'Yes' : 'No'}\nVehicle: ${formData.vehicle}\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}`;
-                    const whatsappUrl = `https://wa.me/233244964880?text=${encodeURIComponent(whatsappMessage)}`;
-                    
-                    window.open(whatsappUrl, '_blank');
-                    
-                    // Show success message
-                    AutoElite.showNotification('Order placed successfully! We\'ll contact you shortly.', 'success');
-                    
-                    // Close modal
-                    modal.style.animation = 'fadeIn 0.3s ease reverse';
-                    setTimeout(() => document.body.removeChild(modal), 300);
-                });
-            }
+            function openOrderModal(partName, vehicle = '') {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3>Order ${partName}</h3>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="order-name">Full Name</label>
+                    <input type="text" id="order-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-phone">Phone Number</label>
+                    <input type="tel" id="order-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-address">Delivery Address (Optional)</label>
+                    <textarea id="order-address" placeholder="For delivery service"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="order-quantity">Quantity</label>
+                    <select id="order-quantity" class="form-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="order-installation">
+                        Include professional installation
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+            </form>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Style modal
+    Object.assign(modal.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: '10000',
+        animation: 'fadeIn 0.3s ease'
+    });
+    
+    const modalContent = modal.querySelector('.modal-content');
+    Object.assign(modalContent.style, {
+        backgroundColor: 'white',
+        padding: '2rem',
+        borderRadius: 'var(--border-radius)',
+        maxWidth: '500px',
+        width: '90%',
+        maxHeight: '90vh',
+        overflowY: 'auto',
+        position: 'relative'
+    });
+    
+    // Close modal
+    modal.querySelector('.modal-close').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+    
+    // Handle form submission - SIMPLIFIED VERSION
+    modal.querySelector('#order-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('order-name').value;
+        const phone = document.getElementById('order-phone').value;
+        const address = document.getElementById('order-address').value;
+        const quantity = document.getElementById('order-quantity').value;
+        const installation = document.getElementById('order-installation').checked;
+        
+        // Create WhatsApp message
+        let message = `New Parts Order Inquiry:\n\n`;
+        message += `Part: ${partName}\n`;
+        message += `Quantity: ${quantity}\n`;
+        if (vehicle) message += `Vehicle: ${vehicle}\n`;
+        if (installation) message += `Installation Required: Yes\n`;
+        message += `\nCustomer Details:\n`;
+        message += `Name: ${name}\n`;
+        message += `Phone: ${phone}\n`;
+        if (address) message += `Address: ${address}\n`;
+        
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // WhatsApp phone number
+        const whatsappNumber = '233244964880';
+        
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Close modal first
+        document.body.removeChild(modal);
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+        
+        // Optional: Show confirmation message
+        if (typeof AutoElite !== 'undefined' && AutoElite.showNotification) {
+            AutoElite.showNotification('Opening WhatsApp to complete your order...', 'success');
+        } else {
+            alert('Opening WhatsApp to complete your order...');
+        }
+    });
+}
         });
     </script>
 </body>
