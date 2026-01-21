@@ -170,7 +170,7 @@ p {
     display: inline-block;
     width: 50px;
     height: 50px;
-    background: url(/assets/icons/danfopii.png) no-repeat center;
+    background: url(../assets/icons/danfopii.png) no-repeat center;
     background-size: contain;
 }
 
@@ -238,7 +238,7 @@ p {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('/assets/images/danfopii2.png') center/cover no-repeat;
+                url('../assets/images/danfopii2.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -808,7 +808,7 @@ p {
 /* ====== PAGE HEADER STYLES ====== */
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('/assets/images/car.jpg') center/cover no-repeat;
+                url('../assets/images/car.jpg') center/cover no-repeat;
     color: var(--white);
     text-align: center;
     padding: 8rem 0 4rem;
@@ -1432,7 +1432,7 @@ p {
 .about-cta {
     padding: 5rem 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('../assets/images/about-cta-bg.jpg') center/cover no-repeat;
+                url('../assets/images/danfopii2.png') center/cover no-repeat;
     color: var(--white);
     text-align: center;
 }
