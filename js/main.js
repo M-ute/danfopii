@@ -523,3 +523,78 @@ window.addEventListener('load', function() {
     // Add loading class removal
     document.body.classList.remove('loading');
 });
+
+
+//HERO SECTION SLIDE SHOW
+// Hero Background Slideshow
+function initHeroBackgroundSlideshow() {
+    const slides = document.querySelectorAll('.hero-slide-bg');
+    const indicators = document.querySelectorAll('.slide-indicators .indicator');
+    
+    if (!slides.length) return; // Exit if no slideshow
+    
+    let currentSlide = 0;
+    let slideInterval;
+    
+    function showSlide(index) {
+        // Remove active class from all
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Handle wrap-around
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        
+        // Add active class to current
+        slides[currentSlide].classList.add('active');
+        if (indicators[currentSlide]) {
+            indicators[currentSlide].classList.add('active');
+        }
+    }
+    
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 10000); // Change every 5 seconds
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+    
+    // Click on indicators to change slide
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoSlide();
+            startAutoSlide(); // Restart timer
+        });
+    });
+    
+    // Pause slideshow on hover
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopAutoSlide);
+        heroSection.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Start the slideshow
+    startAutoSlide();
+}
+
+// Update your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroBackgroundSlideshow();
+    // ... rest of your initialization code
+    initMobileMenu();
+    initCurrentYear();
+    initSmoothScroll();
+    // etc.
+});
