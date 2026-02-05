@@ -1010,8 +1010,13 @@ p {
 }
 
 .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
@@ -1031,6 +1036,14 @@ p {
     color: var(--dark-gray);
     font-size: 0.9rem;
     margin-bottom: 1rem;
+}
+
+#part-not-listed {
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+    display: flex;
+    flex-direction: column;
+    background-color: #cd9292;
 }
 
 .parts-brands {
@@ -1461,20 +1474,31 @@ p {
 
 .contact-methods {
     padding: 3rem 0;
-    margin: 7rem 0;
+    margin: 5rem 0;
+    background-color: var(--light-gray);
 }
+
+
+/* .contact-methods .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+} */
 
 .methods-grid {
     display: flex;
     flex-wrap: wrap;
-    align-items: space-between;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-content: center;
+    justify-items: center; 
+    flex-direction: row;
     gap: 2rem;
     margin: 50px;
 }
 
-.method-card1 {
+.method-card {
     text-align: center;
     padding: 2rem;
     background: var(--white);
@@ -1485,7 +1509,7 @@ p {
     animation: pulse 2s infinite ;
 }
 
-.method-card2 {
+.method-card {
     text-align: center;
     padding: 2rem;
     background: var(--white);
@@ -1496,7 +1520,7 @@ p {
     animation: pulse 2s infinite ;
 }
 
-.method-card2 a {
+.method-card a {
     font-size: 1.2rem;
 }
 
@@ -1561,7 +1585,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 2px;
 
 }
 
@@ -1578,7 +1602,8 @@ p {
 .contact-form {
     max-width: 600px;
     width: 100%;
-    padding: 3rem;
+    padding: 10px;
+    margin-bottom: 20px;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
