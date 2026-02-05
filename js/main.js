@@ -1,25 +1,13 @@
 // Main JavaScript File
 
-// DOM Ready Function
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all features
-    initMobileMenu();
-    initCurrentYear();
-    initSmoothScroll();
-    initImageLazyLoading();
-    initFormValidation();
-    initWhatsAppChat();
-    initBackToTop();
-    initScrollAnimations();
-});
-
 // Mobile Menu Toggle
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
@@ -38,7 +26,10 @@ function initMobileMenu() {
         
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+            const isClickInsideNav = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
@@ -126,7 +117,6 @@ function initFormValidation() {
             e.preventDefault();
             
             if (validateForm(this)) {
-                // Submit form via WhatsApp or other method
                 submitForm(this);
             }
         });
@@ -215,38 +205,20 @@ function clearError(field) {
 }
 
 // Form Submission
-//Form Submission
-// function submitForm(form) {
-//     const formData = new FormData(form);
-//     const data = Object.fromEntries(formData);
-    
-//     // Check if it's a contact form
-//     if (form.classList.contains('contact-form')) {
-//         // Send via email
-//         const name = data.name || '';
-//         const phone = data.phone || '';
-//         const email = data.email || '';
-//         const message = data.message || '';
-        
-        
-//         const emailBody = `Name: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0ANewsletter: ${newsletter ? 'Yes' : 'No'}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
-        
-//         // Open default email client
-//         window.location.href = `mailto:wiaboamos76@gmail.com?subject=Contact Form Submission from ${name}&body=${emailBody}`;
-        
-//         // Show success message
-//         showNotification('Opening your email client...', 'success');
-//     }
-    
-//     // Reset form
-//     form.reset();
-// }// Form Submission
 function submitForm(form) {
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
     
     // Check if it's a contact form
     if (form.classList.contains('contact-form')) {
+        const submitButton = form.querySelector('.btn-primary');
+        const originalButtonText = submitButton ? submitButton.textContent : 'Send Message';
+        
+        // Disable button
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+        }
+        
         // Use FormSubmit
         fetch('https://formsubmit.co/danielappiahofori10@gmail.com', {
             method: 'POST',
@@ -263,6 +235,12 @@ function submitForm(form) {
         .catch(error => {
             showNotification('Sorry, there was an error. Please try again.', 'error');
             console.error('Error:', error);
+        })
+        .finally(() => {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         });
     }
 }
@@ -275,7 +253,7 @@ function initWhatsAppChat() {
         whatsappBtn.addEventListener('click', function(e) {
             e.preventDefault();
             
-            const phoneNumber = '233244964880'; // Replace with actual number
+            const phoneNumber = '233244964880';
             const defaultMessage = 'Hello DANFOPII VENTURES, I\'m interested in your services.';
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
             
@@ -373,6 +351,69 @@ function initScrollAnimations() {
     });
 }
 
+// Hero Background Slideshow
+function initHeroBackgroundSlideshow() {
+    const slides = document.querySelectorAll('.hero-slide-bg');
+    const indicators = document.querySelectorAll('.slide-indicators .indicator');
+    
+    if (!slides.length) return; // Exit if no slideshow exists on this page
+    
+    let currentSlide = 0;
+    let slideInterval;
+    
+    function showSlide(index) {
+        // Remove active class from all
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Handle wrap-around
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        
+        // Add active class to current
+        slides[currentSlide].classList.add('active');
+        if (indicators[currentSlide]) {
+            indicators[currentSlide].classList.add('active');
+        }
+    }
+    
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+    
+    // Click on indicators to change slide
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoSlide();
+            startAutoSlide(); // Restart timer
+        });
+    });
+    
+    // Pause slideshow on hover
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopAutoSlide);
+        heroSection.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Start the slideshow
+    startAutoSlide();
+}
+
 // Notification System
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
@@ -411,7 +452,9 @@ function showNotification(message, type = 'info') {
     setTimeout(() => {
         notification.style.animation = 'slideInRight 0.3s ease reverse forwards';
         setTimeout(() => {
-            document.body.removeChild(notification);
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
         }, 300);
     }, 5000);
 }
@@ -499,6 +542,7 @@ window.AutoElite = {
         initWhatsAppChat();
         initBackToTop();
         initScrollAnimations();
+        initHeroBackgroundSlideshow();
     },
     
     showNotification: showNotification,
@@ -508,6 +552,22 @@ window.AutoElite = {
     debounce: debounce,
     throttle: throttle
 };
+
+// ============================================
+// SINGLE DOM READY EVENT - ALL INITIALIZATION
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all features
+    initHeroBackgroundSlideshow(); // Slideshow first
+    initMobileMenu();              // Then menu
+    initCurrentYear();
+    initSmoothScroll();
+    initImageLazyLoading();
+    initFormValidation();
+    initWhatsAppChat();
+    initBackToTop();
+    initScrollAnimations();
+});
 
 // Initialize on window load
 window.addEventListener('load', function() {
@@ -522,79 +582,4 @@ window.addEventListener('load', function() {
     
     // Add loading class removal
     document.body.classList.remove('loading');
-});
-
-
-//HERO SECTION SLIDE SHOW
-// Hero Background Slideshow
-function initHeroBackgroundSlideshow() {
-    const slides = document.querySelectorAll('.hero-slide-bg');
-    const indicators = document.querySelectorAll('.slide-indicators .indicator');
-    
-    if (!slides.length) return; // Exit if no slideshow
-    
-    let currentSlide = 0;
-    let slideInterval;
-    
-    function showSlide(index) {
-        // Remove active class from all
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        // Handle wrap-around
-        if (index >= slides.length) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = slides.length - 1;
-        } else {
-            currentSlide = index;
-        }
-        
-        // Add active class to current
-        slides[currentSlide].classList.add('active');
-        if (indicators[currentSlide]) {
-            indicators[currentSlide].classList.add('active');
-        }
-    }
-    
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-    
-    function startAutoSlide() {
-        slideInterval = setInterval(nextSlide, 10000); // Change every 5 seconds
-    }
-    
-    function stopAutoSlide() {
-        clearInterval(slideInterval);
-    }
-    
-    // Click on indicators to change slide
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-            stopAutoSlide();
-            startAutoSlide(); // Restart timer
-        });
-    });
-    
-    // Pause slideshow on hover
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', stopAutoSlide);
-        heroSection.addEventListener('mouseleave', startAutoSlide);
-    }
-    
-    // Start the slideshow
-    startAutoSlide();
-}
-
-// Update your DOMContentLoaded event
-document.addEventListener('DOMContentLoaded', function() {
-    initHeroBackgroundSlideshow();
-    // ... rest of your initialization code
-    initMobileMenu();
-    initCurrentYear();
-    initSmoothScroll();
-    // etc.
-});
+}); 
