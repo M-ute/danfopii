@@ -387,7 +387,7 @@ function initHeroBackgroundSlideshow() {
     }
     
     function startAutoSlide() {
-        slideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+        slideInterval = setInterval(nextSlide, 10000); // Change every 10 seconds
     }
     
     function stopAutoSlide() {
