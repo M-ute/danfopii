@@ -215,25 +215,56 @@ function clearError(field) {
 }
 
 // Form Submission
+//Form Submission
+// function submitForm(form) {
+//     const formData = new FormData(form);
+//     const data = Object.fromEntries(formData);
+    
+//     // Check if it's a contact form
+//     if (form.classList.contains('contact-form')) {
+//         // Send via email
+//         const name = data.name || '';
+//         const phone = data.phone || '';
+//         const email = data.email || '';
+//         const message = data.message || '';
+        
+        
+//         const emailBody = `Name: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0ANewsletter: ${newsletter ? 'Yes' : 'No'}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+        
+//         // Open default email client
+//         window.location.href = `mailto:wiaboamos76@gmail.com?subject=Contact Form Submission from ${name}&body=${emailBody}`;
+        
+//         // Show success message
+//         showNotification('Opening your email client...', 'success');
+//     }
+    
+//     // Reset form
+//     form.reset();
+// }// Form Submission
 function submitForm(form) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     
     // Check if it's a contact form
     if (form.classList.contains('contact-form')) {
-        // Open WhatsApp with form data
-        const phoneNumber = '233244964880'; // Replace with actual number
-        const message = `New Contact Request:\n\nName: ${data.name}\nPhone: ${data.phone}\nMessage: ${data.message}`;
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        
-        window.open(whatsappUrl, '_blank');
-        
-        // Show success message
-        showNotification('Message sent successfully! We\'ll contact you soon.', 'success');
+        // Use FormSubmit
+        fetch('https://formsubmit.co/danielappiahofori10@gmail.com', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                showNotification('Message sent successfully! We\'ll contact you soon.', 'success');
+                form.reset();
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(error => {
+            showNotification('Sorry, there was an error. Please try again.', 'error');
+            console.error('Error:', error);
+        });
     }
-    
-    // Reset form
-    form.reset();
 }
 
 // WhatsApp Chat Functionality

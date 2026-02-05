@@ -184,33 +184,60 @@ class FormValidator {
         input.classList.remove('error');
     }
     
+    // handleFormSubmit(formData) {
+    //     const form = formData.element;
+    //     const formId = formData.id;
+    //     const formValues = this.getFormValues(formData);
+        
+    //     // Different handling based on form type
+    //     switch(formId) {
+    //         case 'service-booking-form':
+    //         case 'rental-search-form':
+    //             this.submitToWhatsApp(formValues, formId);
+    //             break;
+    //         case 'quote-form':
+    //         case 'booking-form':
+    //         case 'order-form':
+    //             this.submitToWhatsApp(formValues, formId);
+    //             break;
+    //         default:
+    //             this.submitToWhatsApp(formValues, 'general');
+    //     }
+        
+    //     // Reset form
+    //     form.reset();
+        
+    //     // Show success message
+    //     AutoElite.showNotification('Form submitted successfully! We\'ll contact you soon.', 'success');
+    // }
+    
     handleFormSubmit(formData) {
-        const form = formData.element;
-        const formId = formData.id;
-        const formValues = this.getFormValues(formData);
-        
-        // Different handling based on form type
-        switch(formId) {
-            case 'contact-form':
-            case 'service-booking-form':
-            case 'rental-search-form':
-                this.submitToWhatsApp(formValues, formId);
-                break;
-            case 'quote-form':
-            case 'booking-form':
-            case 'order-form':
-                this.submitToWhatsApp(formValues, formId);
-                break;
-            default:
-                this.submitToWhatsApp(formValues, 'general');
-        }
-        
-        // Reset form
-        form.reset();
-        
-        // Show success message
-        AutoElite.showNotification('Form submitted successfully! We\'ll contact you soon.', 'success');
+    const form = formData.element;
+    const formId = formData.id;
+    const formValues = this.getFormValues(formData);
+    
+    // Different handling based on form type
+    switch(formId) {
+        case 'contact-form':
+        case 'service-booking-form':
+        case 'rental-search-form':
+            this.submitToEmail(formValues, formId);  // Changed from submitToWhatsApp
+            break;
+        case 'quote-form':
+        case 'booking-form':
+        case 'order-form':
+            this.submitToEmail(formValues, formId);  // Changed from submitToWhatsApp
+            break;
+        default:
+            this.submitToEmail(formValues, 'general');  // Changed from submitToWhatsApp
     }
+    
+    // Reset form
+    form.reset();
+    
+    // Show success message
+    AutoElite.showNotification('Form submitted successfully! We\'ll contact you soon.', 'success');
+}
     
     getFormValues(formData) {
         const values = {};
@@ -230,31 +257,82 @@ class FormValidator {
         return values;
     }
     
-    submitToWhatsApp(formValues, formType) {
-        const phoneNumber = '1234567890'; // Replace with actual number
+    // submitToWhatsApp(formValues, formType) {
+    //     const phoneNumber = '233244964880'; // Replace with actual number
         
-        let message = '';
+    //     let message = '';
         
-        switch(formType) {
-            case 'contact-form':
-                message = this.formatContactMessage(formValues);
-                break;
-            case 'service-booking-form':
-                message = this.formatServiceBookingMessage(formValues);
-                break;
-            case 'rental-search-form':
-                message = this.formatRentalSearchMessage(formValues);
-                break;
-            case 'quote-form':
-                message = this.formatQuoteMessage(formValues);
-                break;
-            default:
-                message = this.formatGenericMessage(formValues);
-        }
+    //     switch(formType) {
+            
+    //         case 'service-booking-form':
+    //             message = this.formatServiceBookingMessage(formValues);
+    //             break;
+    //         case 'rental-search-form':
+    //             message = this.formatRentalSearchMessage(formValues);
+    //             break;
+    //         case 'quote-form':
+    //             message = this.formatQuoteMessage(formValues);
+    //             break;
+    //         default:
+    //             message = this.formatGenericMessage(formValues);
+    //     }
         
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+    //     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    //     window.open(whatsappUrl, '_blank');
+    // }
+    submitToEmail(formValues, formType) {
+    let message = '';
+    
+    switch(formType) {
+        case 'contact-form':
+            message = this.formatContactMessageForEmail(formValues);
+            break;
+        case 'service-booking-form':
+            message = this.formatServiceBookingMessage(formValues);
+            break;
+        case 'rental-search-form':
+            message = this.formatRentalSearchMessage(formValues);
+            break;
+        case 'quote-form':
+            message = this.formatQuoteMessage(formValues);
+            break;
+        default:
+            message = this.formatGenericMessage(formValues);
     }
+    
+    // Use FormSubmit for contact form
+    if (formType === 'contact-form') {
+        this.submitViaFormSubmit(formValues);
+    } else {
+        // For other forms, use mailto
+        const subject = `Form Submission: ${formType}`;
+        window.location.href = `mailto:danielappiahofori10@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    }
+}
+
+submitViaFormSubmit(values) {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://formsubmit.co/danielappiahofori10@gmail.com';
+    
+    // Add form fields
+    for (const [key, value] of Object.entries(values)) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+    }
+    
+    // Add to body and submit
+    document.body.appendChild(form);
+    form.submit();
+}
+
+formatContactMessageForEmail(values) {
+    return `Name: ${values.name}\nPhone: ${values.phone}\nEmail: ${values.email}\nNewsletter: ${values.newsletter ? 'Yes' : 'No'}\n\nMessage:\n${values.message}`;
+}
+
     
     formatContactMessage(values) {
         return `New Contact Form Submission:\n\nName: ${values.name}\nPhone: ${values.phone}\nEmail: ${values.email}\nSubject: ${values.subject}\nMessage: ${values.message}`;
